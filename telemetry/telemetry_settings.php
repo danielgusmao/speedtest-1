@@ -4,7 +4,7 @@ $db_type="sqlite"; //Type of db: "mysql", "sqlite" or "postgresql"
 $stats_password="PASSWORD"; //password to login to stats.php. Change this!!!
 
 // Sqlite3 settings
-$Sqlite_db_file = "../../telemetry.sql";
+$Sqlite_db_file = "telemetry.sql";
 
 // Mysql settings
 $MySql_username="USERNAME";
