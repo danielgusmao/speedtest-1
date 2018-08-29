@@ -59,7 +59,7 @@ if($db_type=="mysql"){
 	$q = $conn->prepare("select ispinfo,dl,ul,ping,jitter from speedtest_users where id=?");
 	$q->bind_param("i",$id);
 	$q->execute();
-	$q->bind_result($ispinfo,$dl,$ul,$ping,$jit);
+	$q->bind_result($ispinfo,$dl,$ul,$ping,$jitter);
 	$q->fetch();
 }else if($db_type=="sqlite"){
 	$conn = new PDO("sqlite:$Sqlite_db_file") or die();
@@ -118,7 +118,7 @@ imagefttext($im,$FONT_1_SIZE,0,$POSITION_X_JIT-$jitBbox[4]/2,$POSITION_Y_1,$TEXT
 imagefttext($im,$FONT_2_SIZE,0,$POSITION_X_DL-$dlMeterBbox[4]/2,$POSITION_Y_2,$TEXT_COLOR_2,$FONT_2,$dl);
 imagefttext($im,$FONT_2_SIZE,0,$POSITION_X_UL-$ulMeterBbox[4]/2,$POSITION_Y_2,$TEXT_COLOR_2,$FONT_2,$ul);
 imagefttext($im,$FONT_2_SIZE,0,$POSITION_X_PING-$pingMeterBbox[4]/2,$POSITION_Y_2,$TEXT_COLOR_2,$FONT_2,$ping);
-imagefttext($im,$FONT_2_SIZE,0,$POSITION_X_JIT-$jitMeterBbox[4]/2,$POSITION_Y_2,$TEXT_COLOR_2,$FONT_2,$jit);
+imagefttext($im,$FONT_2_SIZE,0,$POSITION_X_JIT-$jitMeterBbox[4]/2,$POSITION_Y_2,$TEXT_COLOR_2,$FONT_2,$jitter);
 imagefttext($im,$FONT_3_SIZE,0,$POSITION_X_DL-$mbpsBbox[4]/2,$POSITION_Y_3,$TEXT_COLOR_3,$FONT_3,$MBPS_TEXT);
 imagefttext($im,$FONT_3_SIZE,0,$POSITION_X_UL-$mbpsBbox[4]/2,$POSITION_Y_3,$TEXT_COLOR_3,$FONT_3,$MBPS_TEXT);
 imagefttext($im,$FONT_3_SIZE,0,$POSITION_X_PING-$msBbox[4]/2,$POSITION_Y_3,$TEXT_COLOR_3,$FONT_3,$MS_TEXT);
