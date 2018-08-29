@@ -1,6 +1,6 @@
 <?php
 
-$db_type="mysql"; //Type of db: "mysql", "sqlite" or "postgresql"
+$db_type="sqlite"; //Type of db: "mysql", "sqlite" or "postgresql"
 $stats_password="PASSWORD"; //password to login to stats.php. Change this!!!
 
 // Sqlite3 settings
