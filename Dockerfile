@@ -4,6 +4,7 @@ WORKDIR /var/www/html/
 COPY . /var/www/html
 RUN chown -hR www-data:www-data /var/www/html \
     && ln -s /var/www/html /var/www/html/speedtest \
+    && apt update \
     && apt install libpng-dev \
     && docker-php-ext-install gd
 
