@@ -481,7 +481,6 @@ function sendTelemetry(done){
   xhr = new XMLHttpRequest()
   xhr.onload = function () { 
 	try{
-    console.log(xhr.responseText);
 		var parts=xhr.responseText.split(' ')
 		if(parts[0]=='id'){
 			try{
@@ -508,7 +507,6 @@ function sendTelemetry(done){
     fd.append('jitter', jitterStatus)
     fd.append('log', settings.telemetry_level>1?log:"")
     fd.append('extra', settings.telemetry_extra);
-    console.log(fd);
     xhr.send(fd)
   }catch(ex){
     var postData = 'extra='+encodeURIComponent(settings.telemetry_extra)+'&ispinfo='+encodeURIComponent(JSON.stringify(telemetryIspInfo))+'&dl='+encodeURIComponent(dlStatus)+'&ul='+encodeURIComponent(ulStatus)+'&ping='+encodeURIComponent(pingStatus)+'&jitter='+encodeURIComponent(jitterStatus)+'&log='+encodeURIComponent(settings.telemetry_level>1?log:'')
