@@ -477,6 +477,7 @@ function pingTest (done) {
 // telemetry
 function sendTelemetry(done){
   if (settings.telemetry_level < 1) return
+  console.log("Sending Telemetry");
   xhr = new XMLHttpRequest()
   xhr.onload = function () { 
 	try{
